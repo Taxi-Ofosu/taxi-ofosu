@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Taxi Ofosu — Bereken je ritprijs direct</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="logo">Taxi <span>Ofosu</span></div>
+    <nav class="nav-links">
+      <a href="#hoe-werkt-het">Hoe werkt het</a>
+      <a href="#calculator">Bereken prijs</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Weet direct wat jouw taxirit kost</h1>
+      <p>Vul je vertrekpunt en bestemming in en ontvang binnen enkele seconden een betrouwbare prijsindicatie van Taxi Ofosu.</p>
+    </div>
+  </section>
+
+  <section class="calculator" id="calculator">
+    <div class="calc-card">
+      <h2>Bereken de prijs van je taxirit</h2>
+
+      <form id="price-form">
+        <div class="field">
+          <span class="field-icon">📍</span>
+          <input type="text" id="origin" placeholder="Vertrekadres" autocomplete="off" required>
+        </div>
+
+        <div class="field">
+          <span class="field-icon">📍</span>
+          <input type="text" id="destination" placeholder="Bestemmingsadres" autocomplete="off" required>
+        </div>
+
+        <div class="field">
+          <span class="field-icon">📅</span>
+          <input type="date" id="ride-date" required>
+        </div>
+
+        <button type="submit" class="btn-calculate" id="calc-btn">
+          <span class="btn-label">Bereken prijs</span>
+          <span class="btn-spinner" hidden></span>
+        </button>
+      </form>
+
+      <p class="error-msg" id="error-msg" hidden></p>
+
+      <div class="result" id="result" hidden>
+        <div class="result-label">Geschatte prijs</div>
+        <div class="result-price">
+          <span>€</span><span id="price-value">0</span>
+        </div>
+        <div class="result-meta" id="result-meta"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="how-it-works" id="hoe-werkt-het">
+    <h2>Hoe werkt het</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3>Vul je adressen in</h3>
+        <p>Voer je vertrekpunt en bestemming in.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3>Kies een datum</h3>
+        <p>Selecteer de gewenste dag van je rit.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3>Ontvang je prijs</h3>
+        <p>Direct een betrouwbare schatting op basis van de werkelijke reisafstand.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <p>Taxi Ofosu — Prijsindicatie o.b.v. OpenStreetMap</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
