@@ -110,7 +110,8 @@ body {
   text-align: center;
 }
 
-#price-form {
+#price-form,
+#booking-form {
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -241,6 +242,47 @@ body {
   color: var(--muted);
 }
 
+/* ---------- Booking ---------- */
+.booking,
+.booking-success {
+  margin-top: 32px;
+  padding-top: 32px;
+  border-top: 1px dashed var(--border);
+}
+
+.booking h3,
+.booking-success h3 {
+  margin: 0 0 8px;
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.booking-intro,
+.booking-success p {
+  margin: 0 0 24px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.booking-success { text-align: center; }
+
+.success-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--gradient);
+  color: #1F1400;
+  font-size: 28px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+}
+
 /* ---------- How it works ---------- */
 .how-it-works {
   max-width: 960px;
@@ -258,8 +300,8 @@ body {
 
 .steps {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
 }
 
 .step {
@@ -303,6 +345,10 @@ body {
   color: var(--muted);
   font-size: 13px;
   border-top: 1px solid var(--border);
+}
+
+@media (max-width: 960px) {
+  .steps { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 720px) {

@@ -64,6 +64,41 @@
         </div>
         <div class="result-meta" id="result-meta"></div>
       </div>
+
+      <div class="booking" id="booking" hidden>
+        <h3>Boek deze rit</h3>
+        <p class="booking-intro">Vul je gegevens in en bevestig je rit. We nemen zo snel mogelijk contact met je op.</p>
+
+        <form id="booking-form">
+          <div class="field">
+            <span class="field-icon">👤</span>
+            <input type="text" id="customer-name" placeholder="Naam" autocomplete="name" required>
+          </div>
+
+          <div class="field">
+            <span class="field-icon">📞</span>
+            <input type="tel" id="customer-phone" placeholder="Telefoonnummer" autocomplete="tel" required>
+          </div>
+
+          <div class="field">
+            <span class="field-icon">✉️</span>
+            <input type="email" id="customer-email" placeholder="E-mailadres" autocomplete="email" required>
+          </div>
+
+          <button type="submit" class="btn-calculate" id="book-btn">
+            <span class="btn-label">Bevestig rit</span>
+            <span class="btn-spinner" hidden></span>
+          </button>
+        </form>
+
+        <p class="error-msg" id="booking-error" hidden></p>
+      </div>
+
+      <div class="booking-success" id="booking-success" hidden>
+        <div class="success-icon">✓</div>
+        <h3>Bedankt voor je boeking!</h3>
+        <p>We hebben je aanvraag goed ontvangen en nemen zo snel mogelijk contact met je op. Je ontvangt ook een bevestiging per e-mail.</p>
+      </div>
     </div>
   </section>
 
@@ -84,6 +119,11 @@
         <div class="step-num">3</div>
         <h3>Ontvang je prijs</h3>
         <p>Direct een betrouwbare schatting op basis van de werkelijke reisafstand.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <h3>Bevestig je rit</h3>
+        <p>Vul je naam, nummer en e-mail in. We nemen snel contact met je op.</p>
       </div>
     </div>
   </section>
