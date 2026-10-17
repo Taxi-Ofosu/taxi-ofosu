@@ -271,7 +271,12 @@ body {
   gap: 16px;
 }
 
-.field-row input { min-width: 0; }
+.field-row > .field { min-width: 0; }
+.field-row input { min-width: 0; width: 100%; padding-left: 12px; padding-right: 12px; }
+
+@media (max-width: 420px) {
+  .field-row { grid-template-columns: 1fr; }
+}
 
 .field-textarea { align-items: flex-start; }
 .field-textarea .field-icon { padding-top: 18px; }
