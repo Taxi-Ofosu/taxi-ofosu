@@ -126,6 +126,55 @@ body {
 
 .nav-links a:hover { color: #FFD65A; }
 
+.nav-links .nav-call {
+  color: #1F1400;
+  background: var(--gradient);
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-weight: 700;
+}
+
+.nav-links .nav-call:hover { color: #1F1400; background: var(--gradient-hover); }
+
+.hero-badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.hero-badges span {
+  font-size: 14px;
+  font-weight: 600;
+  color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(6px);
+  padding: 8px 14px;
+  border-radius: 999px;
+}
+
+.hero-call {
+  display: inline-block;
+  margin-top: 28px;
+  padding: 16px 28px;
+  border-radius: var(--radius-md);
+  background: var(--gradient);
+  color: #1F1400;
+  font-weight: 700;
+  font-size: 17px;
+  text-decoration: none;
+  box-shadow: 0 16px 40px rgba(255, 138, 0, 0.35);
+  transition: transform 0.15s ease, background 0.2s ease;
+}
+
+.hero-call:hover { background: var(--gradient-hover); transform: translateY(-2px); }
+
+.footer p { margin: 4px 0; }
+
+.footer a { color: #FFD65A; text-decoration: none; }
+
 /* ---------- Hero ---------- */
 .hero {
   max-width: 720px;
@@ -446,4 +495,9 @@ body {
   .steps { grid-template-columns: 1fr; }
   .calc-card { padding: 32px 24px; }
   .hero { padding: 64px 24px 40px; }
+  .topbar-inner { padding: 14px 16px; }
+  .nav-links a:not(.nav-call) { display: none; }
+  .nav-links .nav-call span { display: none; }
+  .nav-links .nav-call { margin-left: 0; }
+  .nav-links .nav-call::after { content: "Bel"; }
 }

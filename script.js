@@ -145,7 +145,7 @@ bookingForm.addEventListener("submit", async (e) => {
     bookingSuccess.hidden = false;
     bookingForm.reset();
   } catch {
-    bookingError.textContent = "Je boeking kon niet worden verzonden. Probeer het opnieuw of bel ons.";
+    bookingError.textContent = "Je boeking kon niet worden verzonden. Probeer het opnieuw of bel ons op +32 491 02 21 45.";
     bookingError.hidden = false;
   } finally {
     setBookingLoading(false);
