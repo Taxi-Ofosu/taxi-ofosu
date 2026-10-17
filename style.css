@@ -18,8 +18,68 @@ body {
   margin: 0;
   font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
   color: var(--ink);
-  background: var(--page-bg);
+  background: #0B0D14;
   -webkit-font-smoothing: antialiased;
+}
+
+/* ---------- Bewegende achtergrond ---------- */
+.bg-scene {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.bg-photo {
+  position: absolute;
+  inset: -6%;
+  background: url("images/achtergrond.jpg") center 60% / cover no-repeat;
+  animation: bg-drift 32s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+@keyframes bg-drift {
+  0%   { transform: scale(1)    translate(0, 0); }
+  50%  { transform: scale(1.08) translate(-1.5%, 1%); }
+  100% { transform: scale(1.12) translate(1.5%, -1.5%); }
+}
+
+.bg-lights span {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(6px);
+  opacity: 0;
+  mix-blend-mode: screen;
+  animation-name: light-float, light-twinkle;
+  animation-timing-function: ease-in-out, ease-in-out;
+  animation-iteration-count: infinite, infinite;
+  animation-direction: alternate, alternate;
+}
+
+@keyframes light-float {
+  from { transform: translate(0, 0); }
+  to   { transform: translate(40px, -25px); }
+}
+
+@keyframes light-twinkle {
+  0%   { opacity: 0.05; }
+  50%  { opacity: 0.55; }
+  100% { opacity: 0.15; }
+}
+
+.bg-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 50% 20%, rgba(11, 13, 20, 0.35) 0%, rgba(11, 13, 20, 0.75) 70%),
+    linear-gradient(180deg, rgba(11, 13, 20, 0.55) 0%, rgba(11, 13, 20, 0.35) 40%, rgba(11, 13, 20, 0.8) 100%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bg-photo,
+  .bg-lights span { animation: none; }
+  .bg-lights span { opacity: 0.25; }
 }
 
 /* ---------- Topbar ---------- */
@@ -27,9 +87,9 @@ body {
   position: sticky;
   top: 0;
   z-index: 10;
-  background: rgba(251, 249, 246, 0.85);
-  backdrop-filter: blur(8px);
-  border-bottom: 1px solid var(--border);
+  background: rgba(11, 13, 20, 0.55);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .topbar-inner {
@@ -45,6 +105,7 @@ body {
   font-weight: 800;
   font-size: 22px;
   letter-spacing: -0.02em;
+  color: #FFFFFF;
 }
 
 .logo span {
@@ -57,13 +118,13 @@ body {
 .nav-links a {
   margin-left: 28px;
   text-decoration: none;
-  color: var(--muted);
+  color: rgba(255, 255, 255, 0.72);
   font-weight: 500;
   font-size: 15px;
   transition: color 0.2s ease;
 }
 
-.nav-links a:hover { color: var(--ink); }
+.nav-links a:hover { color: #FFD65A; }
 
 /* ---------- Hero ---------- */
 .hero {
@@ -79,11 +140,14 @@ body {
   line-height: 1.15;
   letter-spacing: -0.03em;
   margin: 0 0 20px;
+  color: #FFFFFF;
+  text-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
 }
 
 .hero p {
   font-size: 18px;
-  color: var(--muted);
+  color: rgba(255, 255, 255, 0.82);
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.6);
   line-height: 1.6;
   margin: 0;
 }
@@ -99,7 +163,7 @@ body {
   background: var(--card-bg);
   border-radius: var(--radius-lg);
   padding: 44px;
-  box-shadow: var(--shadow-soft);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
   border: 1px solid var(--border);
 }
 
@@ -321,6 +385,7 @@ body {
   font-weight: 800;
   margin: 0 0 48px;
   letter-spacing: -0.02em;
+  color: #FFFFFF;
 }
 
 .steps {
@@ -367,9 +432,10 @@ body {
 .footer {
   text-align: center;
   padding: 28px;
-  color: var(--muted);
+  color: rgba(255, 255, 255, 0.6);
   font-size: 13px;
-  border-top: 1px solid var(--border);
+  background: rgba(11, 13, 20, 0.6);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 @media (max-width: 960px) {

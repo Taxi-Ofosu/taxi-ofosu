@@ -40,6 +40,28 @@ let currentRide = null;
 
 document.getElementById("ride-date").min = new Date().toISOString().split("T")[0];
 
+createBackgroundLights();
+
+// Zwevende, wazige stadslichtjes over de achtergrondfoto.
+function createBackgroundLights() {
+  const container = document.getElementById("bg-lights");
+  const colors = ["#FF3B3B", "#FFB347", "#FFE7A3", "#3DDBC0", "#5AA9FF", "#FF8A00"];
+  const count = window.innerWidth < 720 ? 14 : 26;
+
+  for (let i = 0; i < count; i++) {
+    const light = document.createElement("span");
+    const size = 12 + Math.random() * 46;
+    light.style.width = `${size}px`;
+    light.style.height = `${size}px`;
+    light.style.left = `${Math.random() * 100}%`;
+    light.style.top = `${30 + Math.random() * 45}%`;
+    light.style.background = colors[Math.floor(Math.random() * colors.length)];
+    light.style.animationDuration = `${6 + Math.random() * 10}s, ${2.5 + Math.random() * 4}s`;
+    light.style.animationDelay = `${-Math.random() * 10}s, ${-Math.random() * 4}s`;
+    container.appendChild(light);
+  }
+}
+
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
   hideError();
