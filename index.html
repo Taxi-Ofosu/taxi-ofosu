@@ -44,9 +44,16 @@
           <input type="text" id="destination" placeholder="Bestemmingsadres" autocomplete="off" required>
         </div>
 
-        <div class="field">
-          <span class="field-icon">📅</span>
-          <input type="date" id="ride-date" required>
+        <div class="field-row">
+          <div class="field">
+            <span class="field-icon">📅</span>
+            <input type="date" id="ride-date" required>
+          </div>
+
+          <div class="field">
+            <span class="field-icon">🕒</span>
+            <input type="time" id="ride-time" step="300" required>
+          </div>
         </div>
 
         <button type="submit" class="btn-calculate" id="calc-btn">
@@ -85,6 +92,11 @@
             <input type="email" id="customer-email" placeholder="E-mailadres" autocomplete="email" required>
           </div>
 
+          <div class="field field-textarea">
+            <span class="field-icon">📝</span>
+            <textarea id="customer-notes" rows="3" placeholder="Extra informatie (optioneel), bijv. bagage, aantal personen, vluchtnummer"></textarea>
+          </div>
+
           <button type="submit" class="btn-calculate" id="book-btn">
             <span class="btn-label">Bevestig rit</span>
             <span class="btn-spinner" hidden></span>
@@ -112,8 +124,8 @@
       </div>
       <div class="step">
         <div class="step-num">2</div>
-        <h3>Kies een datum</h3>
-        <p>Selecteer de gewenste dag van je rit.</p>
+        <h3>Kies datum en tijd</h3>
+        <p>Selecteer de gewenste dag en tijd van je rit.</p>
       </div>
       <div class="step">
         <div class="step-num">3</div>

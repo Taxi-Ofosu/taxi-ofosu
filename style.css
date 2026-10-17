@@ -149,7 +149,32 @@ body {
   padding: 18px 20px;
 }
 
-.field input::placeholder { color: #9CA3AF; }
+.field input::placeholder,
+.field textarea::placeholder { color: #9CA3AF; }
+
+.field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.field-row input { min-width: 0; }
+
+.field-textarea { align-items: flex-start; }
+.field-textarea .field-icon { padding-top: 18px; }
+
+.field textarea {
+  flex: 1;
+  border: none;
+  background: transparent;
+  outline: none;
+  font-family: inherit;
+  font-size: 16px;
+  color: var(--ink);
+  padding: 18px 20px;
+  resize: vertical;
+  min-height: 90px;
+}
 
 .btn-calculate {
   margin-top: 8px;

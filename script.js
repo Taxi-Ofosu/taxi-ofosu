@@ -65,6 +65,7 @@ form.addEventListener("submit", async (e) => {
       origin: originText,
       destination: destinationText,
       date: document.getElementById("ride-date").value,
+      time: document.getElementById("ride-time").value,
       distanceKm,
       price
     };
@@ -88,6 +89,7 @@ bookingForm.addEventListener("submit", async (e) => {
   const name = document.getElementById("customer-name").value.trim();
   const phone = document.getElementById("customer-phone").value.trim();
   const email = document.getElementById("customer-email").value.trim();
+  const notes = document.getElementById("customer-notes").value.trim();
 
   try {
     const res = await fetch(FORMSUBMIT_URL, {
@@ -105,8 +107,10 @@ bookingForm.addEventListener("submit", async (e) => {
         Vertrekadres: currentRide.origin,
         Bestemming: currentRide.destination,
         Datum: currentRide.date,
+        Tijd: currentRide.time,
         Afstand: `${currentRide.distanceKm.toFixed(1)} km`,
-        Prijsindicatie: `€ ${currentRide.price.toFixed(2).replace(".", ",")}`
+        Prijsindicatie: `€ ${currentRide.price.toFixed(2).replace(".", ",")}`,
+        "Extra informatie": notes || "-"
       })
     });
 
