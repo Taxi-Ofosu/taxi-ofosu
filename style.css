@@ -102,17 +102,13 @@ body {
 }
 
 .logo {
-  font-weight: 800;
-  font-size: 22px;
-  letter-spacing: -0.02em;
-  color: #FFFFFF;
+  display: flex;
 }
 
-.logo span {
-  background: var(--gradient);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+.logo img {
+  height: 58px;
+  width: auto;
+  display: block;
 }
 
 .nav-links a {
@@ -501,6 +497,7 @@ body {
   .calc-card { padding: 32px 24px; }
   .hero { padding: 64px 24px 40px; }
   .topbar-inner { padding: 14px 16px; }
+  .logo img { height: 46px; }
   .nav-links a:not(.nav-call) { display: none; }
   .nav-links .nav-call span { display: none; }
   .nav-links .nav-call { margin-left: 0; }
