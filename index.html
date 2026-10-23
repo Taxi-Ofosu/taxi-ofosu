@@ -27,8 +27,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="icon" type="image/svg+xml" href="images/favicon.svg?v=7">
-<link rel="stylesheet" href="style.css?v=7">
+<link rel="icon" type="image/svg+xml" href="images/favicon.svg?v=8">
+<link rel="stylesheet" href="style.css?v=8">
 </head>
 <body>
 
@@ -40,7 +40,7 @@
 
 <header class="topbar">
   <div class="topbar-inner">
-    <a href="#" class="logo"><img src="images/logo-donker.svg?v=7" alt="Taxi Ofosu"></a>
+    <a href="#" class="logo"><img src="images/logo-donker.svg?v=8" alt="Taxi Ofosu"></a>
     <nav class="nav-links">
       <a href="#hoe-werkt-het">Hoe werkt het</a>
       <a href="#calculator">Bereken prijs</a>
@@ -179,6 +179,70 @@
   <p>Taxi Ofosu — Taxi in Antwerpen en omgeving, 24/7 · Luchthavenritten</p>
   <p><a href="tel:+32491022145">+32 491 02 21 45</a> · <a href="mailto:Taxi.ofosu@hotmail.com">Taxi.ofosu@hotmail.com</a></p></footer>
 
-<script src="script.js?v=7"></script>
+<!-- Animatie na bevestigen: taxi rijdt zijwaarts over het scherm -->
+<div class="taxi-run" id="taxi-run" hidden aria-hidden="true">
+  <div class="taxi-stage">
+    <div class="taxi-road"></div>
+    <div class="taxi-track">
+      <div class="taxi-speedlines"><span></span><span></span><span></span><span></span></div>
+      <svg class="taxi-car" viewBox="0 0 780 220" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="taxiBody" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#FFE27A"/>
+            <stop offset="0.55" stop-color="#FFC21A"/>
+            <stop offset="1" stop-color="#FF8A00"/>
+          </linearGradient>
+          <linearGradient id="taxiGlass" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#5E7393"/>
+            <stop offset="1" stop-color="#1B2433"/>
+          </linearGradient>
+          <linearGradient id="taxiBeam" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#FFF6D6" stop-opacity="0.75"/>
+            <stop offset="1" stop-color="#FFF6D6" stop-opacity="0"/>
+          </linearGradient>
+          <pattern id="taxiCheck" width="16" height="16" patternUnits="userSpaceOnUse">
+            <rect width="16" height="16" fill="#1F2430"/>
+            <rect width="8" height="8" fill="#fff"/>
+            <rect x="8" y="8" width="8" height="8" fill="#fff"/>
+          </pattern>
+        </defs>
+        <ellipse class="taxi-shadow" cx="300" cy="204" rx="285" ry="12" fill="#000" opacity="0.45"/>
+        <polygon class="taxi-beam" points="568,112 780,82 780,160 568,128" fill="url(#taxiBeam)"/>
+        <g class="taxi-body">
+          <rect x="236" y="26" width="76" height="22" rx="5" fill="#1F2430"/>
+          <rect x="240" y="29" width="68" height="16" rx="4" fill="#FFF3C4"/>
+          <text x="274" y="42" text-anchor="middle" font-family="Poppins, Arial, sans-serif" font-weight="800" font-size="13" fill="#1F2430">TAXI</text>
+          <path d="M30,150 L32,118 Q36,104 60,100 L120,96 L180,52 Q190,46 205,46 L345,46 Q362,46 372,56 L430,96 L530,104 Q562,108 568,124 L572,148 Q572,160 560,160 L505,160 A45,45 0 0 0 415,160 L195,160 A45,45 0 0 0 105,160 L42,160 Q30,160 30,150 Z" fill="url(#taxiBody)" stroke="#B85F00" stroke-width="2"/>
+          <path d="M128,94 L184,58 Q190,54 200,54 L262,54 L262,94 Z" fill="url(#taxiGlass)"/>
+          <path d="M272,54 L342,54 Q355,54 362,62 L414,94 L272,94 Z" fill="url(#taxiGlass)"/>
+          <path d="M150,88 L190,62 L210,62 L170,88 Z M290,62 L310,62 L290,88 L272,88 Z" fill="#fff" opacity="0.18"/>
+          <rect x="40" y="134" width="528" height="12" fill="url(#taxiCheck)" opacity="0.9"/>
+          <line x1="267" y1="98" x2="267" y2="158" stroke="#B85F00" stroke-width="2"/>
+          <rect x="226" y="106" width="22" height="5" rx="2.5" fill="#B85F00"/>
+          <rect x="372" y="106" width="22" height="5" rx="2.5" fill="#B85F00"/>
+          <path d="M418,92 L436,88 L440,100 L424,102 Z" fill="#1F2430"/>
+          <text x="300" y="127" text-anchor="middle" font-family="Poppins, Arial, sans-serif" font-weight="800" font-size="17" letter-spacing="1" fill="#1F2430">TAXI OFOSU</text>
+          <ellipse cx="560" cy="120" rx="9" ry="6" fill="#FFF8E0"/>
+          <rect x="31" y="112" width="8" height="16" rx="3" fill="#E5322D"/>
+        </g>
+        <g class="taxi-wheel" style="transform-origin:150px 162px">
+          <circle cx="150" cy="162" r="38" fill="#14171F"/>
+          <circle cx="150" cy="162" r="23" fill="#C9CED6"/>
+          <path d="M150,141 L150,183 M129,162 L171,162 M135,147 L165,177 M165,147 L135,177" stroke="#7B828E" stroke-width="5"/>
+          <circle cx="150" cy="162" r="7" fill="#1F2430"/>
+        </g>
+        <g class="taxi-wheel" style="transform-origin:460px 162px">
+          <circle cx="460" cy="162" r="38" fill="#14171F"/>
+          <circle cx="460" cy="162" r="23" fill="#C9CED6"/>
+          <path d="M460,141 L460,183 M439,162 L481,162 M445,147 L475,177 M475,147 L445,177" stroke="#7B828E" stroke-width="5"/>
+          <circle cx="460" cy="162" r="7" fill="#1F2430"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+  <p class="taxi-caption">Bedankt! <strong>Je boeking is verstuurd.</strong></p>
+</div>
+
+<script src="script.js?v=8"></script>
 </body>
 </html>

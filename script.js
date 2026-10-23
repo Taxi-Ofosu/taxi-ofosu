@@ -144,6 +144,7 @@ bookingForm.addEventListener("submit", async (e) => {
     bookingBox.hidden = true;
     bookingSuccess.hidden = false;
     bookingForm.reset();
+    playTaxiRun();
   } catch {
     bookingError.textContent = "Je boeking kon niet worden verzonden. Probeer het opnieuw of bel ons op +32 491 02 21 45.";
     bookingError.hidden = false;
@@ -151,6 +152,23 @@ bookingForm.addEventListener("submit", async (e) => {
     setBookingLoading(false);
   }
 });
+
+// Taxi rijdt zijwaarts over het scherm na een geslaagde boeking. Klik slaat over.
+function playTaxiRun() {
+  const run = document.getElementById("taxi-run");
+
+  // Herstart de animaties als de klant opnieuw boekt.
+  run.hidden = true;
+  void run.offsetWidth;
+  run.hidden = false;
+
+  const close = () => {
+    run.hidden = true;
+    bookingSuccess.scrollIntoView({ behavior: "smooth", block: "center" });
+  };
+  run.onclick = close;
+  run.onanimationend = (e) => { if (e.target === run) close(); };
+}
 
 function setBookingLoading(isLoading) {
   bookBtn.disabled = isLoading;
