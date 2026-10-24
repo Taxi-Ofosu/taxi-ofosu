@@ -176,11 +176,21 @@ function setBookingLoading(isLoading) {
   bookBtn.querySelector(".btn-label").textContent = isLoading ? "Bezig met verzenden..." : "Bevestig rit";
 }
 
+function capitalizeFirst(text) {
+  return text.charAt(0).toUpperCase() + text.slice(1);
+}
+
+// Street and city start with a capital letter, also visibly once the customer leaves the field
+["origin-street", "origin-city", "destination-street", "destination-city"].forEach((id) => {
+  const input = document.getElementById(id);
+  input.addEventListener("blur", () => { input.value = capitalizeFirst(input.value.trim()); });
+});
+
 // "Straat en nr" is required; postcode and city are optional.
 function readAddress(prefix) {
-  const street = document.getElementById(`${prefix}-street`).value.trim();
+  const street = capitalizeFirst(document.getElementById(`${prefix}-street`).value.trim());
   const postcode = document.getElementById(`${prefix}-postcode`).value.trim();
-  const city = document.getElementById(`${prefix}-city`).value.trim();
+  const city = capitalizeFirst(document.getElementById(`${prefix}-city`).value.trim());
   const place = [postcode, city].filter(Boolean).join(" ");
   return place ? `${street}, ${place}` : street;
 }

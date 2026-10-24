@@ -27,8 +27,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="icon" type="image/svg+xml" href="images/favicon.svg?v=9">
-<link rel="stylesheet" href="style.css?v=9">
+<link rel="icon" type="image/svg+xml" href="images/favicon.svg?v=10">
+<link rel="stylesheet" href="style.css?v=10">
 </head>
 <body>
 
@@ -40,7 +40,7 @@
 
 <header class="topbar">
   <div class="topbar-inner">
-    <a href="#" class="logo"><img src="images/logo-donker.svg?v=9" alt="Taxi Ofosu"></a>
+    <a href="#" class="logo"><img src="images/logo-donker.svg?v=10" alt="Taxi Ofosu"></a>
     <nav class="nav-links">
       <a href="#hoe-werkt-het">Hoe werkt het</a>
       <a href="#calculator">Bereken prijs</a>
@@ -72,14 +72,14 @@
           <legend>Vertrekadres</legend>
           <div class="field">
             <span class="field-icon">📍</span>
-            <input type="text" id="origin-street" placeholder="Straat en nr" autocomplete="off" required>
+            <input type="text" id="origin-street" placeholder="Straat en nr" autocapitalize="sentences" autocomplete="off" required>
           </div>
           <div class="field-row field-row-address">
             <div class="field">
               <input type="text" id="origin-postcode" placeholder="Postcode (optioneel)" inputmode="numeric" autocomplete="off">
             </div>
             <div class="field">
-              <input type="text" id="origin-city" placeholder="Stad (optioneel)" autocomplete="off">
+              <input type="text" id="origin-city" placeholder="Stad (optioneel)" autocapitalize="words" autocomplete="off">
             </div>
           </div>
         </fieldset>
@@ -88,14 +88,14 @@
           <legend>Bestemmingsadres</legend>
           <div class="field">
             <span class="field-icon">📍</span>
-            <input type="text" id="destination-street" placeholder="Straat en nr" autocomplete="off" required>
+            <input type="text" id="destination-street" placeholder="Straat en nr" autocapitalize="sentences" autocomplete="off" required>
           </div>
           <div class="field-row field-row-address">
             <div class="field">
               <input type="text" id="destination-postcode" placeholder="Postcode (optioneel)" inputmode="numeric" autocomplete="off">
             </div>
             <div class="field">
-              <input type="text" id="destination-city" placeholder="Stad (optioneel)" autocomplete="off">
+              <input type="text" id="destination-city" placeholder="Stad (optioneel)" autocapitalize="words" autocomplete="off">
             </div>
           </div>
         </fieldset>
@@ -265,6 +265,6 @@
   <p class="taxi-caption">Bedankt! <strong>Je boeking is verstuurd.</strong></p>
 </div>
 
-<script src="script.js?v=9"></script>
+<script src="script.js?v=10"></script>
 </body>
 </html>
