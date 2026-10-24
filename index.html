@@ -27,8 +27,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="icon" type="image/svg+xml" href="images/favicon.svg?v=8">
-<link rel="stylesheet" href="style.css?v=8">
+<link rel="icon" type="image/svg+xml" href="images/favicon.svg?v=9">
+<link rel="stylesheet" href="style.css?v=9">
 </head>
 <body>
 
@@ -40,7 +40,7 @@
 
 <header class="topbar">
   <div class="topbar-inner">
-    <a href="#" class="logo"><img src="images/logo-donker.svg?v=8" alt="Taxi Ofosu"></a>
+    <a href="#" class="logo"><img src="images/logo-donker.svg?v=9" alt="Taxi Ofosu"></a>
     <nav class="nav-links">
       <a href="#hoe-werkt-het">Hoe werkt het</a>
       <a href="#calculator">Bereken prijs</a>
@@ -68,15 +68,37 @@
       <h2>Bereken de prijs van je taxirit</h2>
 
       <form id="price-form">
-        <div class="field">
-          <span class="field-icon">📍</span>
-          <input type="text" id="origin" placeholder="Vertrekadres" autocomplete="off" required>
-        </div>
+        <fieldset class="address-group">
+          <legend>Vertrekadres</legend>
+          <div class="field">
+            <span class="field-icon">📍</span>
+            <input type="text" id="origin-street" placeholder="Straat en nr" autocomplete="off" required>
+          </div>
+          <div class="field-row field-row-address">
+            <div class="field">
+              <input type="text" id="origin-postcode" placeholder="Postcode (optioneel)" inputmode="numeric" autocomplete="off">
+            </div>
+            <div class="field">
+              <input type="text" id="origin-city" placeholder="Stad (optioneel)" autocomplete="off">
+            </div>
+          </div>
+        </fieldset>
 
-        <div class="field">
-          <span class="field-icon">📍</span>
-          <input type="text" id="destination" placeholder="Bestemmingsadres" autocomplete="off" required>
-        </div>
+        <fieldset class="address-group">
+          <legend>Bestemmingsadres</legend>
+          <div class="field">
+            <span class="field-icon">📍</span>
+            <input type="text" id="destination-street" placeholder="Straat en nr" autocomplete="off" required>
+          </div>
+          <div class="field-row field-row-address">
+            <div class="field">
+              <input type="text" id="destination-postcode" placeholder="Postcode (optioneel)" inputmode="numeric" autocomplete="off">
+            </div>
+            <div class="field">
+              <input type="text" id="destination-city" placeholder="Stad (optioneel)" autocomplete="off">
+            </div>
+          </div>
+        </fieldset>
 
         <div class="field-row">
           <div class="field">
@@ -243,6 +265,6 @@
   <p class="taxi-caption">Bedankt! <strong>Je boeking is verstuurd.</strong></p>
 </div>
 
-<script src="script.js?v=8"></script>
+<script src="script.js?v=9"></script>
 </body>
 </html>

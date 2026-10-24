@@ -274,6 +274,27 @@ body {
   .field-row { grid-template-columns: 1fr; }
 }
 
+.address-group {
+  border: none;
+  margin: 0;
+  padding: 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.address-group legend {
+  padding: 0;
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.field-row-address,
+.field-row.field-row-address { grid-template-columns: 2fr 3fr; gap: 10px; }
+
 .field-textarea { align-items: flex-start; }
 .field-textarea .field-icon { padding-top: 18px; }
 

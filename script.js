@@ -72,8 +72,8 @@ form.addEventListener("submit", async (e) => {
   setLoading(true);
 
   try {
-    const originText = document.getElementById("origin").value.trim();
-    const destinationText = document.getElementById("destination").value.trim();
+    const originText = readAddress("origin");
+    const destinationText = readAddress("destination");
 
     const [originCoord, destinationCoord] = await Promise.all([
       geocodeAddress(originText),
@@ -176,8 +176,18 @@ function setBookingLoading(isLoading) {
   bookBtn.querySelector(".btn-label").textContent = isLoading ? "Bezig met verzenden..." : "Bevestig rit";
 }
 
+// "Straat en nr" is required; postcode and city are optional.
+function readAddress(prefix) {
+  const street = document.getElementById(`${prefix}-street`).value.trim();
+  const postcode = document.getElementById(`${prefix}-postcode`).value.trim();
+  const city = document.getElementById(`${prefix}-city`).value.trim();
+  const place = [postcode, city].filter(Boolean).join(" ");
+  return place ? `${street}, ${place}` : street;
+}
+
 async function geocodeAddress(address) {
-  const url = `${NOMINATIM_URL}?format=json&limit=1&q=${encodeURIComponent(address)}`;
+  // viewbox prefers results around Antwerp when no city is given, without excluding other places
+  const url = `${NOMINATIM_URL}?format=json&limit=1&viewbox=3.9,51.4,4.9,51.0&q=${encodeURIComponent(address)}`;
   const res = await fetch(url, { headers: { "Accept": "application/json" } });
   if (!res.ok) throw new Error("Adres opzoeken is mislukt. Probeer het opnieuw.");
 
