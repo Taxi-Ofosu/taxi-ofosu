@@ -5,14 +5,9 @@ const NOMINATIM_URL = "https://nominatim.openstreetmap.org/search";
 const OSRM_URL = "https://router.project-osrm.org/route/v1/driving";
 
 // Boekingen worden via FormSubmit (gratis, geen account) naar dit adres gemaild.
-// De klant krijgt automatisch een bevestigingsmail via _autoresponse.
+// De klant krijgt automatisch een bevestigingsmail via _autoresponse (tekst in i18n.js).
 const BOOKING_EMAIL = "Taxi.ofosu@hotmail.com";
 const FORMSUBMIT_URL = `https://formsubmit.co/ajax/${BOOKING_EMAIL}`;
-const AUTO_REPLY =
-  "Beste klant,\n\n" +
-  "Bedankt voor je boeking bij Taxi Ofosu. We hebben je aanvraag goed ontvangen " +
-  "en nemen dringend contact met je op om je rit te bevestigen.\n\n" +
-  "Met vriendelijke groet,\nTaxi Ofosu";
 
 const PRICING = {
   baseFare: 5,      // vast startbedrag (€)
@@ -95,7 +90,7 @@ form.addEventListener("submit", async (e) => {
     showResult(price, distanceKm);
     bookingBox.hidden = false;
   } catch (err) {
-    showError(err.message || "Er ging iets mis bij het berekenen van de prijs.");
+    showError(err.message || t("error.calc"));
   } finally {
     setLoading(false);
   }
@@ -122,7 +117,8 @@ bookingForm.addEventListener("submit", async (e) => {
         _template: "table",
         _captcha: "false",
         _replyto: email,
-        _autoresponse: AUTO_REPLY,
+        _autoresponse: t("autoReply"),
+        Taal: currentLang.toUpperCase(),
         Naam: name,
         Telefoonnummer: phone,
         email: email,
@@ -146,7 +142,7 @@ bookingForm.addEventListener("submit", async (e) => {
     bookingForm.reset();
     playTaxiRun();
   } catch {
-    bookingError.textContent = "Je boeking kon niet worden verzonden. Probeer het opnieuw of bel ons op +32 491 02 21 45.";
+    bookingError.textContent = t("error.booking");
     bookingError.hidden = false;
   } finally {
     setBookingLoading(false);
@@ -173,7 +169,7 @@ function playTaxiRun() {
 function setBookingLoading(isLoading) {
   bookBtn.disabled = isLoading;
   bookBtn.querySelector(".btn-spinner").hidden = !isLoading;
-  bookBtn.querySelector(".btn-label").textContent = isLoading ? "Bezig met verzenden..." : "Bevestig rit";
+  bookBtn.querySelector(".btn-label").textContent = isLoading ? t("booking.loading") : t("booking.button");
 }
 
 // "Straat en nr" is required; postcode and city are optional.
@@ -189,11 +185,11 @@ async function geocodeAddress(address) {
   // viewbox prefers results around Antwerp when no city is given, without excluding other places
   const url = `${NOMINATIM_URL}?format=json&limit=1&viewbox=3.9,51.4,4.9,51.0&q=${encodeURIComponent(address)}`;
   const res = await fetch(url, { headers: { "Accept": "application/json" } });
-  if (!res.ok) throw new Error("Adres opzoeken is mislukt. Probeer het opnieuw.");
+  if (!res.ok) throw new Error(t("error.lookup"));
 
   const data = await res.json();
   const match = data && data[0];
-  if (!match) throw new Error(`Adres niet gevonden: "${address}"`);
+  if (!match) throw new Error(t("error.notFound", { address }));
 
   return [parseFloat(match.lon), parseFloat(match.lat)]; // [lon, lat]
 }
@@ -201,11 +197,11 @@ async function geocodeAddress(address) {
 async function getDistanceKm(startCoord, endCoord) {
   const url = `${OSRM_URL}/${startCoord[0]},${startCoord[1]};${endCoord[0]},${endCoord[1]}?overview=false`;
   const res = await fetch(url);
-  if (!res.ok) throw new Error("Route berekenen is mislukt. Controleer de adressen.");
+  if (!res.ok) throw new Error(t("error.route"));
 
   const data = await res.json();
   const route = data.routes && data.routes[0];
-  if (!route) throw new Error("Geen route gevonden tussen deze adressen.");
+  if (!route) throw new Error(t("error.noRoute"));
 
   return route.distance / 1000; // meters -> km
 }
@@ -240,7 +236,7 @@ function animateCounter(target) {
 function setLoading(isLoading) {
   calcBtn.disabled = isLoading;
   btnSpinner.hidden = !isLoading;
-  btnLabel.textContent = isLoading ? "Bezig met berekenen..." : "Bereken prijs";
+  btnLabel.textContent = isLoading ? t("calc.loading") : t("calc.button");
 }
 
 function showError(message) {

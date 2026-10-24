@@ -132,6 +132,31 @@ body {
 
 .nav-links .nav-call:hover { color: #1F1400; background: var(--gradient-hover); }
 
+.nav-links { margin-left: auto; }
+
+.lang-switch {
+  display: flex;
+  margin-left: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.lang-switch button {
+  border: none;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.72);
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 7px 10px;
+  cursor: pointer;
+}
+
+.lang-switch button:hover { color: #FFD65A; }
+
+.lang-switch button[aria-pressed="true"] { background: rgba(255, 255, 255, 0.16); color: #FFFFFF; }
+
 .hero-badges {
   display: flex;
   flex-wrap: wrap;
@@ -522,7 +547,16 @@ body {
   .nav-links a:not(.nav-call) { display: none; }
   .nav-links .nav-call span { display: none; }
   .nav-links .nav-call { margin-left: 0; }
-  .nav-links .nav-call::after { content: "Bel"; }
+  .nav-links .nav-call::after { content: attr(data-label); }
+  .lang-switch { margin-left: 10px; }
+  .lang-switch button { padding: 6px 7px; font-size: 12px; }
+}
+
+@media (max-width: 400px) {
+  .logo img { height: 38px; }
+  .nav-links .nav-call { padding: 7px 12px; font-size: 14px; }
+  .lang-switch { margin-left: 8px; }
+  .lang-switch button { padding: 6px 5px; }
 }
 
 /* ---------- Taxi-animatie na bevestigen ---------- */
