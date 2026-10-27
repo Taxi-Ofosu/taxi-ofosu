@@ -2,8 +2,8 @@
 // data-i18n-html (tekst met opmaak) of data-i18n-placeholder (invulvak).
 const TRANSLATIONS = {
   nl: {
-    "meta.title": "Taxi Ofosu — Taxi Antwerpen 24/7 & luchthavenritten",
-    "meta.description": "Taxi Ofosu: uw taxi in Antwerpen en omgeving, 24/7 beschikbaar. Luchthavenritten en ritten op maat. Bereken direct de prijs en boek online of bel +32 491 02 21 45.",
+    "meta.title": "Centraal Taxi Antwerpen — 24/7 taxi & luchthavenritten",
+    "meta.description": "Centraal Taxi Antwerpen: uw taxi in Antwerpen en omgeving, 24/7 beschikbaar. Luchthavenritten en ritten op maat. Bereken direct de prijs en boek online of bel +32 491 02 21 45.",
     "nav.how": "Hoe werkt het",
     "nav.calc": "Bereken prijs",
     "nav.callShort": "Bel",
@@ -11,7 +11,7 @@ const TRANSLATIONS = {
     "badge.always": "🕒 24/7 beschikbaar",
     "badge.airport": "✈️ Luchthavenritten",
     "hero.title": "Jouw taxi in Antwerpen, dag en nacht",
-    "hero.text": "Vul je vertrekpunt en bestemming in en ontvang binnen enkele seconden een betrouwbare prijsindicatie van Taxi Ofosu. Ook voor ritten naar de luchthaven.",
+    "hero.text": "Vul je vertrekpunt en bestemming in en ontvang binnen enkele seconden een betrouwbare prijsindicatie van Centraal Taxi Antwerpen. Ook voor ritten naar de luchthaven.",
     "hero.call": "📞 Bel direct: +32 491 02 21 45",
     "calc.title": "Bereken de prijs van je taxirit",
     "addr.origin": "Vertrekadres",
@@ -41,7 +41,7 @@ const TRANSLATIONS = {
     "step3.text": "Direct een betrouwbare schatting op basis van de werkelijke reisafstand.",
     "step4.title": "Bevestig je rit",
     "step4.text": "Vul je naam, nummer en e-mail in. We nemen snel contact met je op.",
-    "footer.line": "Taxi Ofosu — Taxi in Antwerpen en omgeving, 24/7 · Luchthavenritten",
+    "footer.line": "Centraal Taxi Antwerpen — Taxi in Antwerpen en omgeving, 24/7 · Luchthavenritten",
     "taxi.caption": "Bedankt! <strong>Je boeking is verstuurd.</strong>",
     "error.calc": "Er ging iets mis bij het berekenen van de prijs.",
     "error.booking": "Je boeking kon niet worden verzonden. Probeer het opnieuw of bel ons op +32 491 02 21 45.",
@@ -49,11 +49,11 @@ const TRANSLATIONS = {
     "error.notFound": "Adres niet gevonden: \"{address}\"",
     "error.route": "Route berekenen is mislukt. Controleer de adressen.",
     "error.noRoute": "Geen route gevonden tussen deze adressen.",
-    "autoReply": "Beste klant,\n\nBedankt voor je boeking bij Taxi Ofosu. We hebben je aanvraag goed ontvangen en nemen dringend contact met je op om je rit te bevestigen.\n\nMet vriendelijke groet,\nTaxi Ofosu"
+    "autoReply": "Beste klant,\n\nBedankt voor je boeking bij Centraal Taxi Antwerpen. We hebben je aanvraag goed ontvangen en nemen dringend contact met je op om je rit te bevestigen.\n\nMet vriendelijke groet,\nCentraal Taxi Antwerpen"
   },
   en: {
-    "meta.title": "Taxi Ofosu — Taxi Antwerp 24/7 & airport transfers",
-    "meta.description": "Taxi Ofosu: your taxi in Antwerp and surroundings, available 24/7. Airport transfers and custom rides. Get an instant price and book online or call +32 491 02 21 45.",
+    "meta.title": "Centraal Taxi Antwerpen — 24/7 taxi & airport transfers",
+    "meta.description": "Centraal Taxi Antwerpen: your taxi in Antwerp and surroundings, available 24/7. Airport transfers and custom rides. Get an instant price and book online or call +32 491 02 21 45.",
     "nav.how": "How it works",
     "nav.calc": "Get a price",
     "nav.callShort": "Call",
@@ -61,7 +61,7 @@ const TRANSLATIONS = {
     "badge.always": "🕒 Available 24/7",
     "badge.airport": "✈️ Airport transfers",
     "hero.title": "Your taxi in Antwerp, day and night",
-    "hero.text": "Enter your pick-up point and destination and get a reliable price estimate from Taxi Ofosu within seconds. Airport rides too.",
+    "hero.text": "Enter your pick-up point and destination and get a reliable price estimate from Centraal Taxi Antwerpen within seconds. Airport rides too.",
     "hero.call": "📞 Call now: +32 491 02 21 45",
     "calc.title": "Calculate the price of your taxi ride",
     "addr.origin": "Pick-up address",
@@ -91,7 +91,7 @@ const TRANSLATIONS = {
     "step3.text": "An instant, reliable estimate based on the actual travel distance.",
     "step4.title": "Confirm your ride",
     "step4.text": "Enter your name, number and email. We will contact you shortly.",
-    "footer.line": "Taxi Ofosu — Taxi in Antwerp and surroundings, 24/7 · Airport transfers",
+    "footer.line": "Centraal Taxi Antwerpen — Taxi in Antwerp and surroundings, 24/7 · Airport transfers",
     "taxi.caption": "Thank you! <strong>Your booking has been sent.</strong>",
     "error.calc": "Something went wrong while calculating the price.",
     "error.booking": "Your booking could not be sent. Please try again or call us at +32 491 02 21 45.",
@@ -99,11 +99,11 @@ const TRANSLATIONS = {
     "error.notFound": "Address not found: \"{address}\"",
     "error.route": "Route calculation failed. Please check the addresses.",
     "error.noRoute": "No route found between these addresses.",
-    "autoReply": "Dear customer,\n\nThank you for booking with Taxi Ofosu. We have received your request and will contact you shortly to confirm your ride.\n\nKind regards,\nTaxi Ofosu"
+    "autoReply": "Dear customer,\n\nThank you for booking with Centraal Taxi Antwerpen. We have received your request and will contact you shortly to confirm your ride.\n\nKind regards,\nCentraal Taxi Antwerpen"
   },
   fr: {
-    "meta.title": "Taxi Ofosu — Taxi Anvers 24h/24 & transferts aéroport",
-    "meta.description": "Taxi Ofosu : votre taxi à Anvers et environs, disponible 24h/24 et 7j/7. Transferts aéroport et trajets sur mesure. Calculez le prix et réservez en ligne ou appelez le +32 491 02 21 45.",
+    "meta.title": "Centraal Taxi Antwerpen — Taxi 24h/24 & transferts aéroport",
+    "meta.description": "Centraal Taxi Antwerpen : votre taxi à Anvers et environs, disponible 24h/24 et 7j/7. Transferts aéroport et trajets sur mesure. Calculez le prix et réservez en ligne ou appelez le +32 491 02 21 45.",
     "nav.how": "Comment ça marche",
     "nav.calc": "Calculer le prix",
     "nav.callShort": "Appeler",
@@ -111,7 +111,7 @@ const TRANSLATIONS = {
     "badge.always": "🕒 Disponible 24h/24",
     "badge.airport": "✈️ Transferts aéroport",
     "hero.title": "Votre taxi à Anvers, jour et nuit",
-    "hero.text": "Indiquez votre point de départ et votre destination et recevez en quelques secondes une estimation de prix fiable de Taxi Ofosu. Aussi pour les trajets vers l'aéroport.",
+    "hero.text": "Indiquez votre point de départ et votre destination et recevez en quelques secondes une estimation de prix fiable de Centraal Taxi Antwerpen. Aussi pour les trajets vers l'aéroport.",
     "hero.call": "📞 Appelez directement : +32 491 02 21 45",
     "calc.title": "Calculez le prix de votre course en taxi",
     "addr.origin": "Adresse de départ",
@@ -141,7 +141,7 @@ const TRANSLATIONS = {
     "step3.text": "Une estimation fiable et immédiate, basée sur la distance réelle du trajet.",
     "step4.title": "Confirmez votre course",
     "step4.text": "Indiquez votre nom, numéro et e-mail. Nous vous contacterons rapidement.",
-    "footer.line": "Taxi Ofosu — Taxi à Anvers et environs, 24h/24 · Transferts aéroport",
+    "footer.line": "Centraal Taxi Antwerpen — Taxi à Anvers et environs, 24h/24 · Transferts aéroport",
     "taxi.caption": "Merci ! <strong>Votre réservation a été envoyée.</strong>",
     "error.calc": "Une erreur s'est produite lors du calcul du prix.",
     "error.booking": "Votre réservation n'a pas pu être envoyée. Veuillez réessayer ou appelez-nous au +32 491 02 21 45.",
@@ -149,7 +149,7 @@ const TRANSLATIONS = {
     "error.notFound": "Adresse introuvable : « {address} »",
     "error.route": "Le calcul de l'itinéraire a échoué. Vérifiez les adresses.",
     "error.noRoute": "Aucun itinéraire trouvé entre ces adresses.",
-    "autoReply": "Cher client,\n\nMerci pour votre réservation chez Taxi Ofosu. Nous avons bien reçu votre demande et vous contacterons rapidement pour confirmer votre course.\n\nCordialement,\nTaxi Ofosu"
+    "autoReply": "Cher client,\n\nMerci pour votre réservation chez Centraal Taxi Antwerpen. Nous avons bien reçu votre demande et vous contacterons rapidement pour confirmer votre course.\n\nCordialement,\nCentraal Taxi Antwerpen"
   }
 };
 

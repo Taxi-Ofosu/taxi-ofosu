@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 660 200" width="660" height="200">
-  <title>TaxiOfosu</title>
+  <title>Centraal Taxi Antwerpen</title>
   <rect width="660" height="200" fill="#ffffff"/>
 
   <!-- Embleem -->
@@ -39,9 +39,10 @@
   <rect x="40" y="138" width="120" height="4" rx="2" fill="#111"/>
 
   <!-- Woordmerk -->
-  <text x="208" y="112" font-family="Montserrat, 'Arial Black', Arial, sans-serif" font-weight="900" font-size="70" letter-spacing="-1">
-    <tspan fill="#111">Taxi</tspan><tspan fill="#E8A900">Ofosu</tspan>
+  <text x="208" y="80" textLength="420" lengthAdjust="spacingAndGlyphs" font-family="Montserrat, 'Arial Black', Arial, sans-serif" font-weight="900" font-size="54">
+    <tspan fill="#111">Centraal </tspan><tspan fill="#E8A900">Taxi</tspan>
   </text>
-  <rect x="210" y="128" width="60" height="5" fill="#FFC400"/>
-  <text x="282" y="134" font-family="Montserrat, Arial, sans-serif" font-weight="700" font-size="15" fill="#444" letter-spacing="4">BETROUWBAAR · SNEL · VEILIG</text>
+  <text x="208" y="128" textLength="420" lengthAdjust="spacing" font-family="Montserrat, 'Arial Black', Arial, sans-serif" font-weight="900" font-size="40" fill="#111">ANTWERPEN</text>
+  <rect x="210" y="146" width="60" height="5" fill="#FFC400"/>
+  <text x="282" y="152" font-family="Montserrat, Arial, sans-serif" font-weight="700" font-size="15" fill="#444" letter-spacing="4">BETROUWBAAR · SNEL · VEILIG</text>
 </svg>
