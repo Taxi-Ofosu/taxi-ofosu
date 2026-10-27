@@ -6,7 +6,7 @@ const OSRM_URL = "https://router.project-osrm.org/route/v1/driving";
 
 // Boekingen worden via FormSubmit (gratis, geen account) naar dit adres gemaild.
 // De klant krijgt automatisch een bevestigingsmail via _autoresponse (tekst in i18n.js).
-const BOOKING_EMAIL = "Taxi.ofosu@hotmail.com";
+const BOOKING_EMAIL = "info@taxiant.be";
 const FORMSUBMIT_URL = `https://formsubmit.co/ajax/${BOOKING_EMAIL}`;
 
 const PRICING = {
