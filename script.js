@@ -134,15 +134,16 @@ bookingForm.addEventListener("submit", async (e) => {
 
     const data = await res.json().catch(() => ({}));
     if (!res.ok || data.success === false || data.success === "false") {
-      throw new Error();
+      throw new Error(data.message || `HTTP ${res.status}`);
     }
 
     bookingBox.hidden = true;
     bookingSuccess.hidden = false;
     bookingForm.reset();
     playTaxiRun();
-  } catch {
-    bookingError.textContent = t("error.booking");
+  } catch (err) {
+    // Technische reden klein erachter, zodat een probleem makkelijk te achterhalen is.
+    bookingError.textContent = `${t("error.booking")} (${err.message || err})`;
     bookingError.hidden = false;
   } finally {
     setBookingLoading(false);
