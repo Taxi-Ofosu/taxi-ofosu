@@ -4,10 +4,10 @@
 const NOMINATIM_URL = "https://nominatim.openstreetmap.org/search";
 const OSRM_URL = "https://router.project-osrm.org/route/v1/driving";
 
-// Boekingen worden via FormSubmit (gratis, geen account) naar dit adres gemaild.
-// De klant krijgt automatisch een bevestigingsmail via _autoresponse (tekst in i18n.js).
-const BOOKING_EMAIL = "info@taxiant.be";
-const FORMSUBMIT_URL = `https://formsubmit.co/ajax/${BOOKING_EMAIL}`;
+// Boekingen worden via Web3Forms (gratis, 250 per maand) gemaild naar info@taxiant.be.
+// De access key hoort bij dat adres en mag publiek in de code staan.
+const WEB3FORMS_URL = "https://api.web3forms.com/submit";
+const WEB3FORMS_KEY = "44615d73-a151-4cf0-a771-ef487f049ce2";
 
 const PRICING = {
   baseFare: 5,      // vast startbedrag (€)
@@ -109,15 +109,14 @@ bookingForm.addEventListener("submit", async (e) => {
   const notes = document.getElementById("customer-notes").value.trim();
 
   try {
-    const res = await fetch(FORMSUBMIT_URL, {
+    const res = await fetch(WEB3FORMS_URL, {
       method: "POST",
       headers: { "Content-Type": "application/json", "Accept": "application/json" },
       body: JSON.stringify({
-        _subject: `Nieuwe taxiboeking van ${name}`,
-        _template: "table",
-        _captcha: "false",
-        _replyto: email,
-        _autoresponse: t("autoReply"),
+        access_key: WEB3FORMS_KEY,
+        subject: `Nieuwe taxiboeking van ${name}`,
+        from_name: "Website Centraal Taxi Antwerpen",
+        replyto: email,
         Taal: currentLang.toUpperCase(),
         Naam: name,
         Telefoonnummer: phone,
